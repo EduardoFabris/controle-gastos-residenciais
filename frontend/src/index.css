@@ -1,0 +1,435 @@
+/* ============================================ */
+/* Estilos Globais */
+/* ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #0066cc;
+  --secondary-color: #f39c12;
+  --success-color: #27ae60;
+  --danger-color: #e74c3c;
+  --warning-color: #f39c12;
+  --dark-color: #2c3e50;
+  --light-color: #ecf0f1;
+  --border-color: #bdc3c7;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: var(--dark-color);
+  line-height: 1.6;
+}
+
+/* ============================================ */
+/* App Layout */
+/* ============================================ */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #0052a3 100%);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.app-content {
+  display: flex;
+  flex: 1;
+  gap: 0;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: var(--dark-color);
+  color: white;
+  padding: 0;
+  box-shadow: var(--shadow);
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-item {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border: none;
+  background: none;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 1rem;
+  border-left: 4px solid transparent;
+}
+
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left-color: var(--primary-color);
+}
+
+.nav-item.active {
+  background-color: #0052A3;
+  border-left-color: var(--secondary-color);
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.footer {
+  background-color: var(--dark-color);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+/* ============================================ */
+/* Componentes Reutilizáveis */
+/* ============================================ */
+
+/* Formulários */
+.form-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+/* Botões */
+.btn-primary,
+.btn-secondary,
+.btn-edit,
+.btn-delete {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: var(--transition);
+  font-weight: 600;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0052a3;
+  box-shadow: var(--shadow);
+}
+
+.btn-secondary {
+  background-color: var(--border-color);
+  color: var(--dark-color);
+}
+
+.btn-secondary:hover {
+  background-color: #95a5a6;
+}
+
+.btn-edit {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+}
+
+.btn-edit:hover {
+  background-color: #e67e22;
+}
+
+.btn-delete {
+  background-color: var(--danger-color);
+  color: white;
+  padding: 0.5rem 1rem;
+}
+
+.btn-delete:hover {
+  background-color: #c0392b;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Alertas */
+.alert {
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.alert-error {
+  background-color: #fadbd8;
+  color: #922b21;
+  border-left: 4px solid var(--danger-color);
+}
+
+.alert-warning {
+  background-color: #fdeaa8;
+  color: #7d6608;
+  border-left: 4px solid var(--warning-color);
+}
+
+.alert-success {
+  background-color: #d5f4e6;
+  color: #196f3d;
+  border-left: 4px solid var(--success-color);
+}
+
+/* Tabelas */
+.tabela-pessoas,
+.tabela-categorias,
+.tabela-transacoes,
+.tabela-relatorio {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: var(--shadow);
+  margin-top: 1rem;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.tabela-pessoas thead,
+.tabela-categorias thead,
+.tabela-transacoes thead,
+.tabela-relatorio thead {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.tabela-pessoas th,
+.tabela-categorias th,
+.tabela-transacoes th,
+.tabela-relatorio th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.tabela-pessoas td,
+.tabela-categorias td,
+.tabela-transacoes td,
+.tabela-relatorio td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--light-color);
+}
+
+.tabela-pessoas tbody tr:hover,
+.tabela-categorias tbody tr:hover,
+.tabela-transacoes tbody tr:hover,
+.tabela-relatorio tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Status e valores */
+.finalidade {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.finalidade-despesa {
+  background-color: #fadbd8;
+  color: #922b21;
+}
+
+.finalidade-receita {
+  background-color: #d5f4e6;
+  color: #196f3d;
+}
+
+.finalidade-ambas {
+  background-color: #eaf2f8;
+  color: #1a5276;
+}
+
+.tipo {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.tipo-despesa {
+  background-color: #fadbd8;
+  color: #922b21;
+}
+
+.tipo-receita {
+  background-color: #d5f4e6;
+  color: #196f3d;
+}
+
+.valor-receita {
+  color: var(--success-color);
+  font-weight: 600;
+}
+
+.valor-despesa {
+  color: var(--danger-color);
+  font-weight: 600;
+}
+
+.valor-saldo {
+  font-weight: 700;
+}
+
+.saldo-positivo {
+  color: var(--success-color);
+}
+
+.saldo-negativo {
+  color: var(--danger-color);
+}
+
+/* Estados */
+.loading {
+  text-align: center;
+  color: var(--primary-color);
+  font-weight: 600;
+  padding: 2rem;
+}
+
+.empty {
+  text-align: center;
+  color: #95a5a6;
+  font-style: italic;
+  padding: 2rem;
+}
+
+.total {
+  margin-top: 1rem;
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+.acoes {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* ============================================ */
+/* Responsive */
+/* ============================================ */
+
+@media (max-width: 768px) {
+  .app-content {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .nav-list {
+    display: flex;
+    width: 100%;
+  }
+
+  .nav-item {
+    flex: 1;
+    padding: 1rem;
+    border-bottom: 4px solid transparent;
+  }
+
+  .nav-item.active,
+  .nav-item:hover {
+    border-bottom-color: var(--primary-color);
+    border-left-color: transparent;
+  }
+
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .tabela-pessoas,
+  .tabela-categorias,
+  .tabela-transacoes,
+  .tabela-relatorio {
+    font-size: 0.9rem;
+  }
+
+  .tabela-pessoas th,
+  .tabela-categorias th,
+  .tabela-transacoes th,
+  .tabela-relatorio th,
+  .tabela-pessoas td,
+  .tabela-categorias td,
+  .tabela-transacoes td,
+  .tabela-relatorio td {
+    padding: 0.5rem;
+  }
+}
