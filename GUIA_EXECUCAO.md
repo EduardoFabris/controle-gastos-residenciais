@@ -374,28 +374,6 @@ npm install
 
 ---
 
-## 🎯 Próximos Passos Opcionais
-
-1. **Deploy em Produção**:
-   - Publicar backend: `dotnet publish -c Release`
-   - Build frontend: `npm run build`
-
-2. **Adicionar Autenticação**:
-   - Implementar JWT no backend
-   - Adicionar login no frontend
-
-3. **Melhorias de UX**:
-   - Adicionar notificações (toast)
-   - Implementar dark mode
-   - Adicionar paginação nas tabelas
-
-4. **Testes**:
-   - Testes unitários (xUnit no backend)
-   - Testes de integração
-   - Testes E2E (Cypress no frontend)
-
----
-
 ## 📞 Suporte
 
 Se encontrar problemas:

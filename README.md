@@ -438,20 +438,19 @@ A API retorna respostas estruturadas para erros:
 
 ## 📋 Próximas Etapas
 
-- [ ] Implementar Frontend React/TypeScript
 - [ ] Implementar autenticação e autorização
 - [ ] Adicionar testes unitários (xUnit)
 - [ ] Implementar pagination nas listagens
 - [ ] Adicionar filtros avançados
 - [ ] Implementar relatórios em PDF
 - [ ] Deploy em produção
-- [ ] Configurar CI/CD (GitHub Actions)
+- [ ] Configurar CI/CD (Azure DevOps)
 
 ---
 
 ## 👨‍💻 Autor
 
-Sistema desenvolvido como solução completa de controle de gastos residenciais.
+Sistema desenvolvido por Eduardo Fabris como solução completa de controle de gastos residenciais.
 
 **Data**: Janeiro de 2026
 
