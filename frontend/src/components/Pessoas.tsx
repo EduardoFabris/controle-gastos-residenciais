@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useState, useEffect } from 'react';
 import { Pessoa, pessoaService } from '../services/apiService';
 import './Pessoas.css';
 
@@ -97,7 +98,8 @@ export const PessoasComponent: React.FC = () => {
   };
 
   return (
-    <div className="pessoas-container">
+    <>
+      <div className="pessoas-container">
       <h2>👥 Gerenciar Pessoas</h2>
 
       {/* Formulário para criar/editar pessoa */}
@@ -184,6 +186,7 @@ export const PessoasComponent: React.FC = () => {
 
       <p className="total">Total de pessoas: {pessoas.length}</p>
     </div>
+    </>
   );
 };
 
